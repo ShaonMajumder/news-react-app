@@ -3,7 +3,8 @@ import axios from "axios";
 import { openModal } from "../modal/modalSlice";
 import {newsApiKey,baseUrl,newsType, newsQueryType,sortBy} from '../../config/new_config';
 
-const url = `https://newsapi.org/v2/everything?q=${newsQueryType.apple}&sortBy=${sortBy}&apiKey=${newsApiKey}`;
+const proxyUrl = "https://cors-anywhere.herokuapp.com/"
+const url = `${proxyUrl}https://newsapi.org/v2/everything?q=${newsQueryType.apple}&sortBy=${sortBy}&apiKey=${newsApiKey}`;
 console.log(url)
 const initialState = {
   articles: [],
